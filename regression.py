@@ -27,6 +27,7 @@ def predict_price(area) -> float:
     lnrg.fit(x,y)
     lnrg.predict(xtest)
     output= lnrg.predict(xtest)
+    output.to_csv('predictedprice',index=False)
     ...
 
 
