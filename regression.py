@@ -1,5 +1,5 @@
 import requests
-import pandas
+import pandas as pd
 import scipy
 import numpy
 import sys
@@ -17,6 +17,16 @@ def predict_price(area) -> float:
     """
     response = requests.get(TRAIN_DATA_URL)
     # YOUR IMPLEMENTATION HERE
+    data1 =pd.read_csv('TRAIN_DATA_URL')
+    data2 =pd.read.csv('TEST_DATA_URL')
+    x= data1['area']
+    y= data1['price']
+    xtest= data2['area']
+    from sklearn.linear_model import LinearRegression
+    lnrg= LinearRegression()
+    lnrg.fit(x,y)
+    lnrg.predict(xtest)
+    output= lnrg.predict(xtest)
     ...
 
 
